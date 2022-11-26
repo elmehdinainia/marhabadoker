@@ -21,7 +21,7 @@ Créer un network, et lui donner le nom de hotel-booking-net
 
 ​
 
-docker network create hotel-booking-net.
+docker network create livraison-marhaba-net .
 
 ​
 
@@ -29,7 +29,7 @@ executez un container basé sur l'image mongo, nommez-le hotel-booking-db et fai
 
 ​
 
-docker container run -d --name hotel-booking-db -v hotel-booking-db:/data/db --network hotel-booking-net mongo
+docker container run -d --name livraison-marhaba-mongo db -v livraison-marhaba-db:/data/db --network livraison-marhaba-net  mongo
 
 ​
 
@@ -45,4 +45,4 @@ exécutez un container basé sur cette image que vous venez de créer, nommez-le
 
 ​
 
-docker container run -d --name livraison-marhaba-frontend -v ${pwd}:/app -v /app/node_modules --network livraison-marhaba-net -p 3000:3000 livraison-marhaba-frontend:test
+docker container run -d --name livraison-marhaba-frontend -v ${pwd}:/app -v /app/node_modules --network livraison-marhaba-net -p 3000:3000 livraison-marhaba-frontend-image
